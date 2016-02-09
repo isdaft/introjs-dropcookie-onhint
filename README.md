@@ -11,7 +11,7 @@ closeButton.onclick = console.log("button closed, stepid: " + stepId);
     
     function hintClickDropCookie(step_Id) {
       
-      var cookiePrefix = "RheemWebsiteProgramHintNumbers_";
+      var cookiePrefix = "ProgramHintNumbers_";
       cookiePrefix = cookiePrefix + step_Id;
       function setCookie(c_name,value,exdays){
         var exdate=new Date();
