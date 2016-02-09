@@ -1,6 +1,9 @@
 # introjs-dropcookie-onhint
 drop a cookie when hint is clicked to hide after viewed
 
+# Get intro.js v2 
+https://github.com/usablica/intro.js
+
 # Modify Intro.js core file @ Line 1461
 Just copy the below text over 1461 and down
 
