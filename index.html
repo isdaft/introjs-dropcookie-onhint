@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hints</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Intro.js - Better introductions for websites and features with a step-by-step guide for your projects.">
+    <meta name="author" content="Afshin Mehrabani (@afshinmeh) in usabli.ca group">
+
+    <!-- styles -->
+    <a class="btn btn-large btn-success" href="javascript:void(0);" onclick="javascript:introJs().addHints();">show hints</a>
+
+    <!-- Add IntroJs styles -->
+    
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <link href="/stylesheets/introjs.css" rel="stylesheet">
+<script src="/stylesheets/intro.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script>
+  /*global
+    introJs
+  */
+   $(document).ready(function() {
+     
+     introJs().addHints();
+     checkCookieIntro();
+     
+});
+    
+    
+    
+    //check for the cookie when user first arrives, if cookie doesn't exist call the intro.
+    function getCookie(c_name)
+    {
+        var c_value = document.cookie;
+        var c_start = c_value.indexOf(" " + c_name + "=");
+        if (c_start == -1){
+              c_start = c_value.indexOf(c_name + "=");
+        }
+        if (c_start == -1){              
+              c_value = null;
+        }
+        else {
+              c_start = c_value.indexOf("=", c_start) + 1;
+              var c_end = c_value.indexOf(";", c_start);
+              if (c_end == -1)
+                  {
+                  c_end = c_value.length;
+                  }
+              c_value = unescape(c_value.substring(c_start,c_end));
+        }
+        return c_value;
+    }
+    function checkCookieIntro(){
+      //how many hints? hardcode names here
+        var cookieHintOne=getCookie("RheemWebsiteProgramHintNumbers_0");
+        var cookieHintTwo=getCookie("RheemWebsiteProgramHintNumbers_1");
+        var cookieHintThree=getCookie("RheemWebsiteProgramHintNumbers_2");
+        
+    
+         if (cookieHintOne==null || cookieHintOne=="") {
+           
+         }
+         else{
+           var stepId1 = cookieHintOne.toString().split("_").pop();
+           console.log("zero: " + stepId1);
+           
+           document.body.querySelector('.introjs-hint[data-step="' + stepId1 + '"]').classList.add('introjs-hidehint');
+         }
+         //
+         //hint 2
+         //
+         if (cookieHintTwo==null || cookieHintTwo=="") {
+           //
+         }
+         else{
+           var stepId2 = cookieHintTwo.toString().split("_").pop();
+           console.log("one " + stepId2);
+           document.body.querySelector('.introjs-hint[data-step="' + stepId2 + '"]').classList.add('introjs-hidehint');
+         }
+         //
+         //hint 3
+         //
+         if (cookieHintThree==null || cookieHintThree=="") {
+           
+         }
+         else{
+           var stepId3 = cookieHintThree.toString().split("_").pop();
+           console.log("two: " + stepId3);
+           document.querySelector('.introjs-hint[data-step="' + stepId3 + '"]').classList.add('introjs-hidehint');
+         }
+    }
+   
+    
+  </script>
+    
+  </head>
+
+  <body onload="">
+    
+    <div class="">
+
+      <div class="">
+        <ul class="nav nav-pills pull-right" data-hint="Get it, use it." data-position="right" id="hintOne">
+          
+        </ul>
+        <h3 class="">Intro.js</h3>
+        <h1 id="hintTwo" data-hint="This is a tooltip!" data-hintPosition="top-middle" data-position="bottom-right-aligned">Hints</h1>
+      </div>
+      <div>
+        <h1 data-hint="This is a tooltip for 10!" data-hintPosition="top-middle" data-position="bottom-right-aligned">Hint #10</h1>
+      </div>
+      
+    
+
+      
+    </div>
+    
+
+  </body>
+</html>
