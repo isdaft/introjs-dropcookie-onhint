@@ -4,11 +4,14 @@ drop a cookie when hint is clicked to hide after viewed
 # Get intro.js v2 
 https://github.com/usablica/intro.js
 
-# Modify Intro.js core file @ Line 1461
-Just copy the below text over 1461 and down
+# Modify Intro.js core file @ Line 1458
+Just copy the below text over 1458 and down
 
 ```
-closeButton.onclick = console.log("button closed, stepid: " + stepId);
+    var closeButton = document.createElement('a');
+    closeButton.className = 'introjs-button';
+    closeButton.innerHTML = this._options.hintButtonLabel;
+    closeButton.onclick = console.log("button closed, stepid: " + stepId);
     closeButton.onclick = hintClickDropCookie(stepId);
     closeButton.onclick = _hideHint.bind(this, stepId);
     
