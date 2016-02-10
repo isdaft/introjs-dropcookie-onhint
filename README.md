@@ -20,9 +20,9 @@ Just copy the below text over 1458 and down
       var cookiePrefix = "ProgramHintNumbers_";
       cookiePrefix = cookiePrefix + step_Id;
       function setCookie(c_name,value,exdays){
-        var exdate=new Date();
-        exdate.setDate(exdate.getDate() + exdays);
-        var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+        //var exdate=new Date();
+        //exdate.setDate(exdate.getDate() + exdays);
+        //var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
         document.cookie=c_name + "=" + step_Id;
         
       }
