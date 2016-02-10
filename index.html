@@ -52,44 +52,15 @@
         return c_value;
     }
     function checkCookieIntro(){
-      //how many hints? hardcode names here
-        var cookieHintOne=getCookie("ProgramHintNumbers_0");
-        var cookieHintTwo=getCookie("ProgramHintNumbers_1");
-        var cookieHintThree=getCookie("ProgramHintNumbers_2");
-        
-    
-         if (cookieHintOne==null || cookieHintOne=="") {
-           
-         }
-         else{
-           var stepId1 = cookieHintOne.toString().split("_").pop();
-           console.log("zero: " + stepId1);
-           
-           document.body.querySelector('.introjs-hint[data-step="' + stepId1 + '"]').classList.add('introjs-hidehint');
-         }
-         //
-         //hint 2
-         //
-         if (cookieHintTwo==null || cookieHintTwo=="") {
-           //
-         }
-         else{
-           var stepId2 = cookieHintTwo.toString().split("_").pop();
-           console.log("one " + stepId2);
-           document.body.querySelector('.introjs-hint[data-step="' + stepId2 + '"]').classList.add('introjs-hidehint');
-         }
-         //
-         //hint 3
-         //
-         if (cookieHintThree==null || cookieHintThree=="") {
-           
-         }
-         else{
-           var stepId3 = cookieHintThree.toString().split("_").pop();
-           console.log("two: " + stepId3);
-           document.querySelector('.introjs-hint[data-step="' + stepId3 + '"]').classList.add('introjs-hidehint');
-         }
+    var keyValuePairs = document.cookie.split(';');
+    for(var i = 0; i < keyValuePairs.length; i++) {
+        var name = keyValuePairs[i].substring(0, keyValuePairs[i].indexOf('='));
+        var value = keyValuePairs[i].substring(keyValuePairs[i].indexOf('=')+1);
+        if (name.indexOf("WebsiteProgramBaseSite") > 0) {
+            document.body.querySelector('.introjs-hint[data-step="' + value + '"]').classList.add('introjs-hidehint');
+        }
     }
+}
    
     
   </script>
