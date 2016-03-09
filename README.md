@@ -10,7 +10,7 @@ Just copy the below text over 1458 and down
 ## Updates
 -add randomized string to each cookie name so that they are not replaced
 
-##Example Usage
+##Example Usage HTML/JS
 
 ```
 function checkCookieIntro(){
@@ -40,6 +40,8 @@ function checkCookieIntro(){
             }
         }
 ```
+
+## Replace Code Line 1458 (or that general region :P)
 
 ```
     var closeButton = document.createElement('a');
